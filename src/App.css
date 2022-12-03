@@ -146,7 +146,28 @@
 }
 .recent {
   width: 90%;
+  height: 80vh;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 600;
+  overflow: scroll;
+}
+.userData {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.userDataBox {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+}
+.userName {
+  color: grey;
+}
+.names {
+  margin-left: 20px;
 }

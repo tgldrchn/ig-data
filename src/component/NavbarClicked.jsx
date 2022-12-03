@@ -6,6 +6,17 @@ import messages from "./assets/messenger.jpeg";
 import igLogo from "./assets/igLogo.png";
 import { useContext } from "react";
 import { NavbarChange } from "../App";
+import axios from "axios";
+import Users from "./User";
+export const instance = axios.create({
+  baseURL: `https://dummyjson.com/users`,
+  timeout: 2000,
+  headers: {
+    "Content-type": "application.json; charset=UTF-8",
+    "app-id": "63104c3120f6e665ecf628ba",
+  },
+});
+
 const Navbar = () => {
   const { navbar, setNavbar } = useContext(NavbarChange);
   const click = () => {
@@ -16,6 +27,10 @@ const Navbar = () => {
     }
     console.log(navbar);
   };
+  const homeClick = () => {
+    setNavbar(false);
+  };
+
   return (
     <div className='navbarsContainer'>
       <div className='navbarClick' id='navbar'>
@@ -33,7 +48,12 @@ const Navbar = () => {
         </div>
         <div className='navbarButtonClick'>
           <div className='navbarImgClick'>
-            <img src={house} style={{ width: "26px", height: "26px" }} alt='' />
+            <img
+              src={house}
+              style={{ width: "26px", height: "26px" }}
+              alt=''
+              onClick={homeClick}
+            />
           </div>
         </div>
         <div className='navbarButtonClick'>
@@ -105,7 +125,9 @@ const Navbar = () => {
           <input type='text' className='navbarInput' placeholder='Search' />
         </div>
         <div className='mainTwo'>
-          <div className='recent'>Recent</div>
+          <div className='recent'>
+            <Users />
+          </div>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ export const NavbarChange = createContext();
 
 function App() {
   const [navbar, setNavbar] = useState(false);
+
   return (
     <NavbarChange.Provider value={{ navbar, setNavbar }}>
       <div className='App'>
