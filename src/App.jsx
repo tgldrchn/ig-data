@@ -1,21 +1,35 @@
 import "./App.css";
 import Navbar from "./component/Navbar";
 import NavbarClicked from "./component/NavbarClicked";
+import axios from "axios";
 import { createContext } from "react";
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./component/Home";
+import UserProfile from "./component/UserProfile";
 export const NavbarChange = createContext();
+export const instance = axios.create({
+  baseURL: "https://dummyjson.com/users",
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+});
 
 function App() {
   const [navbar, setNavbar] = useState(false);
 
   return (
     <NavbarChange.Provider value={{ navbar, setNavbar }}>
-      <div className='App'>
+      <div className="App">
         {navbar ? <NavbarClicked /> : <Navbar />}
-        {/* <div className='container'>
-        <div className='posts'></div>
-        <div className='profile'></div>
-      </div> */}
+        <div className="container">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/username" element={<UserProfile />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       </div>
     </NavbarChange.Provider>
   );
