@@ -14,22 +14,26 @@ export const instance = axios.create({
     "Content-type": "application/json; charset=UTF-8",
   },
 });
+export const instanceTwo = axios.create({
+  baseURL: "https://dummyjson.com/posts",
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+});
 
 function App() {
   const [navbar, setNavbar] = useState(false);
 
   return (
     <NavbarChange.Provider value={{ navbar, setNavbar }}>
-      <div className="App">
+      <div className='App'>
         {navbar ? <NavbarClicked /> : <Navbar />}
-        <div className="container">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/username" element={<UserProfile />} />
-            </Routes>
-          </BrowserRouter>
-        </div>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/username' element={<UserProfile />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </NavbarChange.Provider>
   );
