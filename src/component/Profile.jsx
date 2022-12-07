@@ -17,25 +17,25 @@ const Profile = () => {
     getData();
   }, []);
 
-  console.log(data);
   return (
-    <div className='profile'>
-      <div className='myProfile'>
-        <div className='profileMain'>
-          <img src={pic.image} alt='' className='myProfileImg' />
-          <Link to='./username'>
-            <div className='myUserName'>PROJECT</div>
+    <div className="profile">
+      <div className="myProfile">
+        <div className="profileMain">
+          <img src={pic.image} alt="" className="myProfileImg" />
+          <Link to="./0">
+            {" "}
+            <div className="myUserName">PROJECT</div>
           </Link>
         </div>
-        <div className='Switch'>Switch</div>
+        <div className="Switch">Switch</div>
       </div>
-      <div className='suggest'>
-        <div className='suggestText'>Suggestions for you</div>
+      <div className="suggest">
+        <div className="suggestText">Suggestions for you</div>
         {data &&
           data.map((user) => {
             return (
               <div>
-                <Users user={user} />
+                <Users userName={user} />
               </div>
             );
           })}

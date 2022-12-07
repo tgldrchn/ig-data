@@ -7,6 +7,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
 import UserProfile from "./component/UserProfile";
+import ProRouter from "./component/ProRouter";
 export const NavbarChange = createContext();
 export const instance = axios.create({
   baseURL: "https://dummyjson.com/users",
@@ -26,14 +27,15 @@ function App() {
 
   return (
     <NavbarChange.Provider value={{ navbar, setNavbar }}>
-      <div className='App'>
+      <div className="App">
         {navbar ? <NavbarClicked /> : <Navbar />}
-        <BrowserRouter>
+        <div className="www">
+          {" "}
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/username' element={<UserProfile />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/:id" element={<ProRouter />} />
           </Routes>
-        </BrowserRouter>
+        </div>
       </div>
     </NavbarChange.Provider>
   );

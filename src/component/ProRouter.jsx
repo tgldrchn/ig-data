@@ -1,11 +1,8 @@
-import { useState, useEffect } from "react";
-import Story from "./Story";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { instance } from "../App";
-import "../App.css";
+import { useEffect } from "react";
 import UserProfile from "./UserProfile";
-
-const StoryContainer = () => {
+const ProRouter = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
@@ -18,12 +15,12 @@ const StoryContainer = () => {
   }, []);
 
   return (
-    <div className="storyBox">
+    <div className="prorouter">
       {data &&
-        data.map((users) => {
-          return <Story users={users} />;
-        })}
+        data.map((e) => {
+          return <UserProfile value={e} />;
+        })}{" "}
     </div>
   );
 };
-export default StoryContainer;
+export default ProRouter;
