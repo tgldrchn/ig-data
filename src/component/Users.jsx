@@ -19,17 +19,21 @@ const Users = ({ userName }) => {
     },
   };
   return (
-    <Link to={`${userName.id}`}>
-      <div className="userFatherDiv">
-        <div className="sda">
-          <img src={userName.image} alt="img" className="userImg" />
+    <div className='userFatherDiv'>
+      <Link
+        to={`${userName.id}`}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        {" "}
+        <div className='sda'>
+          <img src={userName.image} alt='img' className='userImg' />
           <div>{userName.username}</div>
-        </div>
-        <div className="Switch" onClick={follow} style={styles.follow}>
-          {isFollowed}
-        </div>
+        </div>{" "}
+      </Link>
+      <div className='Switch' onClick={follow} style={styles.follow}>
+        {isFollowed}
       </div>
-    </Link>
+    </div>
   );
 };
 
