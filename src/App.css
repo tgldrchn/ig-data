@@ -121,12 +121,12 @@
   justify-content: center;
 }
 .navbarSearch {
-  width: 200px;
+  width: 17vw;
   height: 100vh;
 }
 .navbarsContainer {
   background-color: white;
-  width: 400px;
+  width: 24vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -138,7 +138,7 @@
   top: 0px;
 }
 .mainOne {
-  width: 400px;
+  width: 17vw;
   height: 150px;
   border-bottom: 1px solid #efefef;
   display: flex;
@@ -147,7 +147,7 @@
   align-items: center;
 }
 .mainTwo {
-  width: 400px;
+  width: 17vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -158,7 +158,7 @@
   width: 90%;
 }
 .navbarInput {
-  width: 200px;
+  width: 90%;
   height: 40px;
   border-radius: 5px;
   background-color: #efefef;
@@ -363,7 +363,7 @@
   border-radius: 10px;
 }
 .postOne {
-  height: 80vh;
+  height: 60vh;
   margin-top: 20px;
   border: 0.5px solid #cfd1d5;
 }
@@ -373,7 +373,7 @@
 .postImage {
   width: 100%;
   background-color: #0095f6;
-  height: 50vh;
+  height: 40vh;
 }
 .postContainer {
   width: 24vw;
@@ -388,6 +388,39 @@
 }
 .none {
   display: none;
+}
+.postIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.one {
+  display: flex;
+  flex-direction: row;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+.miniContain {
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nnn {
+  width: 90%;
+}
+.postInput {
+  width: 100%;
+  height: 50px;
+}
+.input {
+  width: 100%;
+  height: 30px;
 }
 @media (min-width: 900px) and (max-width: 1600px) {
   .profile {

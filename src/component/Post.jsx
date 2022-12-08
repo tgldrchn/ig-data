@@ -6,15 +6,16 @@ import { instanceTwo } from "../App";
 const Post = () => {
   const [post, setPost] = useState([]);
   const getData = async () => {
-    const res = await instanceTwo.get(`?limit=6`);
+    const res = await instanceTwo.get(``);
     setPost(res.data.posts);
+    console.log(res);
   };
 
   useEffect(() => {
     getData();
   }, []);
   return (
-    <div className="postContainer">
+    <div className='postContainer'>
       {post &&
         post.map((e) => {
           return <PostOne value={e} />;

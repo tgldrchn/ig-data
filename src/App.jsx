@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
 import UserProfile from "./component/UserProfile";
 import ProRouter from "./component/ProRouter";
+import { useEffect } from "react";
 export const NavbarChange = createContext();
 export const instance = axios.create({
   baseURL: "https://dummyjson.com/users",
@@ -24,16 +25,24 @@ export const instanceTwo = axios.create({
 
 function App() {
   const [navbar, setNavbar] = useState(false);
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const res = await instance.get("");
+    setData(res.data.users);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
-    <NavbarChange.Provider value={{ navbar, setNavbar }}>
-      <div className="App">
+    <NavbarChange.Provider value={{ navbar, setNavbar, data, setData }}>
+      <div className='App'>
         {navbar ? <NavbarClicked /> : <Navbar />}
-        <div className="www">
+        <div className='www'>
           {" "}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/:id" element={<ProRouter />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/:id' element={<ProRouter />} />
           </Routes>
         </div>
       </div>
