@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import PostOne from "./PostOne";
-import { instanceTwo } from "../App";
+import { instanceTwo } from "../../App";
 
 const Post = () => {
   const [post, setPost] = useState([]);
@@ -15,7 +15,7 @@ const Post = () => {
     getData();
   }, []);
   return (
-    <div className='postContainer'>
+    <div className="postContainer">
       {post &&
         post.map((e) => {
           return <PostOne value={e} />;

@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Story from "./Story";
-import { Link } from "react-router-dom";
-import { instance } from "../App";
-import "../App.css";
-import UserProfile from "./UserProfile";
+import { instance } from "../../App";
+import "./AppPost.css";
 
 const StoryContainer = () => {
   const [data, setData] = useState([]);

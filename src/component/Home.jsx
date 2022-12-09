@@ -1,19 +1,19 @@
-import Profile from "./Profile";
-import StoryContainer from "./StoryCam";
-import Post from "./Post";
+import ProfileMore from "./profile/ProfileMore";
+import StoryContainer from "./story/StoryCam";
+import Post from "./post/Post";
 const Home = () => {
   return (
-    <div className='container'>
-      <div className='newsfeed'>
-        <div className='storyAbout'>
+    <div className="container">
+      <div className="newsfeed">
+        <div className="storyAbout">
           <StoryContainer />
         </div>
-        <div className='posts'>
+        <div className="posts">
           <Post />
         </div>
       </div>
-      <div className='profiled'>
-        <Profile />
+      <div className="profiled">
+        <ProfileMore />
       </div>
     </div>
   );

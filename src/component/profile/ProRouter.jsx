@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { instance } from "../App";
+import { instance } from "../../App";
 import { useEffect } from "react";
 import UserProfile from "./UserProfile";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,6 @@ const ProRouter = () => {
   const getData = async (id) => {
     const response = await instance.get(`/${id}`);
     setData(response.data);
-    console.log(data);
   };
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const ProRouter = () => {
   }, [params.id]);
 
   return (
-    <div className='prorouter'>{data && <UserProfile value={data} />}</div>
+    <div className="prorouter">{data && <UserProfile value={data} />}</div>
   );
 };
 export default ProRouter;

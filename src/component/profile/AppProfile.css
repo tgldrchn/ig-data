@@ -13,6 +13,9 @@
   flex-direction: row;
   justify-content: center;
 }
+.www {
+  height: auto;
+}
 .navbar {
   background-color: white;
   width: 20vw;
@@ -271,6 +274,7 @@
   align-items: center;
 }
 .profileContainer {
+  margin-top: 50px;
   height: 95vh;
   width: 50vw;
   display: flex;

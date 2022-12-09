@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "../App.css";
+import "./AppProfile.css";
 import { Link } from "react-router-dom";
-const Users = ({ userName }) => {
+const UsersOfMore = ({ userName }) => {
   const [isFollowed, setIsFollowed] = useState("Follow");
   const [boolean, setBoolean] = useState(true);
   const follow = () => {
@@ -19,22 +19,22 @@ const Users = ({ userName }) => {
     },
   };
   return (
-    <div className='userFatherDiv'>
+    <div className="userFatherDiv">
       <Link
         to={`${userName.id}`}
         style={{ textDecoration: "none", color: "black" }}
       >
         {" "}
-        <div className='sda'>
-          <img src={userName.image} alt='img' className='userImg' />
+        <div className="sda">
+          <img src={userName.image} alt="img" className="userImg" />
           <div>{userName.username}</div>
         </div>{" "}
       </Link>
-      <div className='Switch' onClick={follow} style={styles.follow}>
+      <div className="Switch" onClick={follow} style={styles.follow}>
         {isFollowed}
       </div>
     </div>
   );
 };
 
-export default Users;
+export default UsersOfMore;
