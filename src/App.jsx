@@ -9,13 +9,13 @@ import Home from "./component/Home";
 import ProRouter from "./component/profile/ProRouter";
 export const NavbarChange = createContext();
 export const instance = axios.create({
-  baseURL: "https://dummyjson.com/users",
+  baseURL: "http://localhost:7000/users",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
 });
 export const instanceTwo = axios.create({
-  baseURL: "https://dummyjson.com/posts",
+  baseURL: "http://localhost:7000/posts",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },

@@ -9,8 +9,9 @@ const ProRouter = () => {
 
   const getData = async (id) => {
     const response = await instance.get(`/${id}`);
-    setData(response.data);
+    setData(response.data.users);
   };
+  
 
   useEffect(() => {
     getData(params.id);
