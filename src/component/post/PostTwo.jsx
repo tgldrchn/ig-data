@@ -7,7 +7,6 @@ const PostTwo = () => {
     const res = await instance.get("");
     setValue(res.data.users[0]);
   };
-  console.log(value);
   useEffect(() => {
     getPic();
   }, []);
