@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { instance } from "../../App";
+import { instance, instanceTwo } from "../../App";
 const PostTwo = () => {
   const [value, setValue] = useState([]);
   const getPic = async () => {
@@ -10,6 +10,7 @@ const PostTwo = () => {
   useEffect(() => {
     getPic();
   }, []);
+
   return (
     <div className="userDataContainer">
       {" "}
@@ -17,7 +18,7 @@ const PostTwo = () => {
         <img src={value.image} alt="" className="userDataBox" />
         <div className="names">
           <Link
-            to={`${value.id}`}
+            to={`${value._id}`}
             style={{ textDecoration: "none", color: "black" }}
           >
             <div>{value.username}</div>

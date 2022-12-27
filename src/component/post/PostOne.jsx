@@ -1,15 +1,21 @@
 import bg from "./assetsPost/bg.jpeg";
 import PostTwo from "./PostTwo";
 import { Link } from "react-router-dom";
+import { instanceTwo } from "../../App";
 const PostOne = ({ value }) => {
+  console.log(value);
   return (
-    <Link to={`${value.id}`} style={{ textDecoration: "none", color: "black" }}>
+    <Link
+      to="63aab17fd1d87473f34cb3ad"
+      style={{ textDecoration: "none", color: "black" }}
+      s
+    >
       <div className="postOne">
         <div className="postProfile">
           <PostTwo />
         </div>
         <div className="postImage">
-          <img src={bg} alt="" className="postImage" />
+          <img src={value.image} alt="" className="postImage" />
         </div>
         <div className="miniContain">
           {" "}

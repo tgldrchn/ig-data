@@ -23,7 +23,7 @@ const ProfileMore = () => {
         <div className="profileMain">
           <img src={pic.image} alt="" className="myProfileImg" />
           <Link
-            to="./1"
+            to={pic._id}
             style={{
               textDecoration: "none",
               color: "black",
@@ -31,7 +31,7 @@ const ProfileMore = () => {
             }}
           >
             {" "}
-            <div className="myUserName">PROJECT</div>
+            <div className="myUserName">{pic.username}</div>
           </Link>
         </div>
         <div className="Switch">Switch</div>

@@ -21,7 +21,7 @@ const UsersOfMore = ({ userName }) => {
   return (
     <div className="userFatherDiv">
       <Link
-        to={`${userName.id}`}
+        to={`${userName._id}`}
         style={{ textDecoration: "none", color: "black" }}
       >
         {" "}

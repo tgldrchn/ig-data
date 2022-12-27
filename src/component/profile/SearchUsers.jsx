@@ -7,7 +7,7 @@ const SearchUsers = ({ value }) => {
         <img src={value.image} alt='' className='userDataBox' />
         <div className='names'>
           <Link
-            to={`${value.id}`}
+            to={`${value._id}`}
             style={{ textDecoration: "none", color: "black" }}
           >
             <div>{value.username}</div>

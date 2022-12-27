@@ -47,6 +47,7 @@
   height: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   border-radius: 10px;
   box-shadow: 5px 0px 5px 0px #efefef;
 }
@@ -376,7 +377,6 @@
 }
 .postImage {
   width: 100%;
-  background-color: #0095f6;
   height: 40vh;
 }
 .miniContain {
