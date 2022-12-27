@@ -13,7 +13,7 @@ const Post = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [post]);
   return (
     <div className="postContainer">
       {post &&
