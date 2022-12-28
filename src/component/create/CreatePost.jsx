@@ -2,12 +2,14 @@ import { useState } from "react";
 import { instanceTwo } from "../../App";
 
 const CreatePost = () => {
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState();
   const create = async () => {
-    const res = await instanceTwo.post("/", {
-      title: value,
-    });
-    console.log(res);
+    if (value !== "") {
+      const res = await instanceTwo.post("/", {
+        title: value,
+        body: value,
+      });
+    }
   };
 
   return (

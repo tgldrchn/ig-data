@@ -8,7 +8,6 @@ const Post = () => {
   const getData = async () => {
     const res = await instanceTwo.get(``);
     setPost(res.data.posts);
-    console.log(res);
   };
 
   useEffect(() => {

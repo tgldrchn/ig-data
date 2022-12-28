@@ -1,11 +1,17 @@
-import bg from "./assetsPost/bg.jpeg";
 import PostTwo from "./PostTwo";
-import { Link } from "react-router-dom";
 import { instanceTwo } from "../../App";
+import { useState } from "react";
 const PostOne = ({ value }) => {
-  console.log(value);
+  const [upt, setUpt] = useState("");
   const remove = async () => {
     const res = await instanceTwo.delete(`${value._id}`);
+  };
+  const uptade = async () => {
+    if (upt !== "") {
+      const res = await instanceTwo.put(`${value._id}`, {
+        title: upt,
+      });
+    }
   };
   return (
     <div className="postOne">
@@ -88,10 +94,19 @@ const PostOne = ({ value }) => {
                 {value.reactions}
               </div>
             </div>
-            <div className="postTitle">{value.title}</div>
+            <div className="postTitle" style={{ fontWeight: "700" }}>
+              {value.title}
+            </div>
           </div>
           <div className="postInput">
-            <input type="text" placeholder="Add a comment" className="input" />
+            <input
+              type="text"
+              placeholder="Add a comment"
+              className="input"
+              style={{ width: "80%" }}
+              onChange={(e) => setUpt(e.target.value)}
+            />
+            <button onClick={uptade}>uptade</button>
           </div>
         </div>
       </div>
