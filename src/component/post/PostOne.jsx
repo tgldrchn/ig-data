@@ -14,11 +14,11 @@ const PostOne = ({ value }) => {
     }
   };
   return (
-    <div className="postOne">
+    <div className="postOne" style={{ height: "auto" }}>
       <div className="postProfile">
         <PostTwo />
       </div>
-      <div className="postImage">
+      <div className="postImage" style={{ display: "none" }}>
         <img src={value.image} alt="" className="postImage" />
       </div>
       <div className="miniContain">
@@ -103,7 +103,7 @@ const PostOne = ({ value }) => {
               type="text"
               placeholder="Add a comment"
               className="input"
-              style={{ width: "80%" }}
+              style={{ width: "85%" }}
               onChange={(e) => setUpt(e.target.value)}
             />
             <button onClick={uptade}>uptade</button>
