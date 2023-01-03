@@ -13,6 +13,12 @@ const PostOne = ({ value }) => {
       });
     }
   };
+
+  const like = async () => {
+    await instanceTwo.put(`${value._id}`, {
+      reactions: 1,
+    });
+  };
   return (
     <div className="postOne" style={{ height: "auto" }}>
       <div className="postProfile">
@@ -25,7 +31,7 @@ const PostOne = ({ value }) => {
         {" "}
         <div className="postIcons">
           <div className="one">
-            <div className="heartIcon">
+            <div className="heartIcon" onClick={like}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -104,12 +110,12 @@ const PostOne = ({ value }) => {
               type="text"
               placeholder="Add a comment"
               className="input"
-              style={{ width: "90%" }}
+              style={{ width: "87%" }}
               onChange={(e) => setUpt(e.target.value)}
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
+              width="16 "
               height="16"
               fill="currentColor"
               class="bi bi-pen"

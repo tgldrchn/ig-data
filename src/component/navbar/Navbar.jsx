@@ -125,7 +125,11 @@ const Navbar = () => {
           </div>
           <span className="buttonName">Notifications</span>
         </div>
-        <div className="navbarButton">
+        <Link
+          className="navbarButton"
+          to="./create"
+          style={{ textDecoration: "none", color: "black" }}
+        >
           <div className="navbarImg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +145,7 @@ const Navbar = () => {
             </svg>
           </div>
           <span className="buttonName">Create</span>
-        </div>
+        </Link>
         <Link
           to="./1"
           className="navbarButton"

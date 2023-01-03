@@ -4,12 +4,19 @@ import { instanceTwo } from "../../App";
 const CreatePost = () => {
   const [value, setValue] = useState();
   const [tru, setTru] = useState(false);
+  const [message, setMessage] = useState();
   const create = async () => {
     if (value !== "") {
-      await instanceTwo.post("/", {
-        title: value,
-        body: value,
-      });
+      try {
+        await instanceTwo.post("/", {
+          title: value,
+          body: value,
+        });
+        setMessage();
+      } catch (error) {
+        // alert(error.response.data.data);
+        setMessage(error.response.data.data);
+      }
     }
   };
   const changer = () => {
@@ -47,6 +54,21 @@ const CreatePost = () => {
         >
           create
         </button>
+      </div>
+      <div
+        style={{
+          width: "100%",
+          background: "white",
+          fontWeight: "700",
+          height: "auto",
+          marginTop: "20px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "10px",
+        }}
+      >
+        {message}
       </div>
     </div>
   );
