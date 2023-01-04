@@ -41,7 +41,7 @@ const CreatePost = () => {
         placeholder="image"
       ></input>
       <button onClick={create} className="createPostButton">
-        create
+        create post
       </button>
 
       <ToastContainer />

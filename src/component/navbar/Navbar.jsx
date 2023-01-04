@@ -147,7 +147,7 @@ const Navbar = () => {
           <span className="buttonName">Create</span>
         </Link>
         <Link
-          to="./1"
+          to="./63b549ba9c24ece4ce5be2cf"
           className="navbarButton"
           style={{ textDecoration: "none", color: "black" }}
         >
@@ -157,7 +157,7 @@ const Navbar = () => {
           >
             <img
               src={profile.image}
-              style={{ width: "30px", height: "30px" }}
+              style={{ width: "30px", height: "30px", borderRadius: "50%" }}
               alt=""
             />
           </div>

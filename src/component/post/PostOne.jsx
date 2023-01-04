@@ -3,6 +3,7 @@ import { instanceTwo } from "../../App";
 import { useState } from "react";
 const PostOne = ({ value }) => {
   const [upt, setUpt] = useState("");
+
   const remove = async () => {
     await instanceTwo.delete(`${value._id}`);
   };
@@ -24,7 +25,7 @@ const PostOne = ({ value }) => {
         <PostTwo />
       </div>
       <div className="postImage">
-        <img src={value.image} className="postImage" />
+        <img src={value.image} alt="img" className="postImage" />
       </div>
       <div className="miniContain">
         {" "}
@@ -100,7 +101,10 @@ const PostOne = ({ value }) => {
                 {value.reactions}
               </div>
             </div>
-            <div className="postTitle" style={{ fontWeight: "700" }}>
+            <div
+              className="postTitle"
+              style={{ fontWeight: "700", marginTop: "10px" }}
+            >
               {value.title}
             </div>
           </div>

@@ -48,7 +48,7 @@ const CreateUser = () => {
         placeholder="image"
       ></input>
       <button onClick={create} className="createPostButton">
-        create
+        create user
       </button>
 
       <ToastContainer />

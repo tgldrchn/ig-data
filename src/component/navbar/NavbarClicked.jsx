@@ -150,7 +150,7 @@ const Navbar = () => {
           </Link>
         </div>
         <Link
-          to="./1"
+          to="./63b549ba9c24ece4ce5be2cf"
           className="navbarButtonClick"
           style={{ border: "1px solid white" }}
         >
@@ -160,7 +160,7 @@ const Navbar = () => {
           >
             <img
               src={profile.image}
-              style={{ width: "26px", height: "26px" }}
+              style={{ width: "26px", height: "26px", borderRadius: "50%" }}
               alt=""
             />
           </div>

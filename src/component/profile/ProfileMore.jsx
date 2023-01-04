@@ -39,12 +39,14 @@ const ProfileMore = () => {
       <div className="suggest">
         <div className="suggestText">Suggestions for you</div>
         {data &&
-          data.map((user) => {
-            return (
-              <div>
-                <UsersOfMore userName={user} />
-              </div>
-            );
+          data.map((user, i) => {
+            if (i < 6) {
+              return (
+                <div>
+                  <UsersOfMore userName={user} />
+                </div>
+              );
+            }
           })}
       </div>
     </div>
