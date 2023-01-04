@@ -27,7 +27,12 @@ const UsersOfMore = ({ userName }) => {
         {" "}
         <div className="sda">
           <img src={userName.image} alt="img" className="userImg" />
-          <div>{userName.username}</div>
+          <div>
+            <div>{userName.username}</div>
+            <div style={{ color: "grey", fontSize: "13px" }}>
+              followed by 5others
+            </div>
+          </div>
         </div>{" "}
       </Link>
       <div className="Switch" onClick={follow} style={styles.follow}>
