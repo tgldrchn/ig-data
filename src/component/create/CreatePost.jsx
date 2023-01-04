@@ -16,6 +16,7 @@ const CreatePost = () => {
           body: bodyRef.current.value,
           image: imageRef.current.value,
         });
+        toast("successful");
       } catch (error) {
         // alert(error.response.data.data);
         toast(error.response.data.data);

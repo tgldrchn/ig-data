@@ -18,6 +18,7 @@ const CreateUser = () => {
           username: userNameRef.current.value,
           image: profileImageRef.current.value,
         });
+        toast("successful");
       } catch (error) {
         // alert(error.response.data.data);
         toast(error.response.data.data);
