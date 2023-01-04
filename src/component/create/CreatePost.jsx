@@ -1,75 +1,50 @@
-import { useState } from "react";
 import { instanceTwo } from "../../App";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRef } from "react";
 
 const CreatePost = () => {
-  const [value, setValue] = useState();
-  const [tru, setTru] = useState(false);
-  const [message, setMessage] = useState();
+  const titleRef = useRef();
+  const bodyRef = useRef();
+  const imageRef = useRef();
+
   const create = async () => {
-    if (value !== "") {
+    if (titleRef.current.value !== "") {
       try {
         await instanceTwo.post("/", {
-          title: value,
-          body: value,
+          title: titleRef.current.value,
+          body: bodyRef.current.value,
+          image: imageRef.current.value,
         });
-        setMessage();
       } catch (error) {
         // alert(error.response.data.data);
-        setMessage(error.response.data.data);
+        toast(error.response.data.data);
       }
-    }
-  };
-  const changer = () => {
-    if (tru === true) {
-      setTru(false);
-    } else {
-      setTru(true);
     }
   };
 
   return (
-    <div>
-      <div
-        style={{
-          width: "500px",
-          height: "500px",
-          backgroundColor: "black",
-          display: tru ? "none" : "inline",
-        }}
-      ></div>
-      <div style={{ display: "flex", flexDirection: "row" }} onClick={changer}>
-        <input
-          className="navbarInput"
-          onChange={(e) => setValue(e.target.value)}
-          style={{ border: "1px solid grey  ", backgroundColor: "white" }}
-          placeholder="create a post"
-        ></input>
-        <button
-          onClick={create}
-          style={{
-            backgroundColor: "white",
-            borderRadius: "10px",
-            border: "1px solid grey",
-          }}
-        >
-          create
-        </button>
-      </div>
-      <div
-        style={{
-          width: "100%",
-          background: "white",
-          fontWeight: "700",
-          height: "auto",
-          marginTop: "20px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "10px",
-        }}
-      >
-        {message}
-      </div>
+    <div className="inputContainer">
+      <input
+        ref={titleRef}
+        className="postInputs one"
+        placeholder="title"
+      ></input>
+      <input
+        ref={bodyRef}
+        className="postInputs two"
+        placeholder="body"
+      ></input>
+      <input
+        ref={imageRef}
+        className="postInputs three"
+        placeholder="image"
+      ></input>
+      <button onClick={create} className="createPostButton">
+        create
+      </button>
+
+      <ToastContainer />
     </div>
   );
 };

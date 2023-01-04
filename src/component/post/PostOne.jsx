@@ -13,7 +13,6 @@ const PostOne = ({ value }) => {
       });
     }
   };
-
   const like = async () => {
     await instanceTwo.put(`${value._id}`, {
       reactions: 1,
@@ -24,8 +23,8 @@ const PostOne = ({ value }) => {
       <div className="postProfile">
         <PostTwo />
       </div>
-      <div className="postImage" style={{ display: "none" }}>
-        <img src={value.image} alt="" className="postImage" />
+      <div className="postImage">
+        <img src={value.image} className="postImage" />
       </div>
       <div className="miniContain">
         {" "}
