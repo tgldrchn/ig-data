@@ -8,6 +8,7 @@ const CreateUser = () => {
   const lastNameRef = useRef();
   const userNameRef = useRef();
   const profileImageRef = useRef();
+  const dateRef = useRef();
 
   const create = async () => {
     if (firstNameRef.current.value !== "") {
@@ -17,6 +18,7 @@ const CreateUser = () => {
           lastName: lastNameRef.current.value,
           username: userNameRef.current.value,
           image: profileImageRef.current.value,
+          birthday: dateRef.current.value,
         });
         toast("successful");
       } catch (error) {
@@ -45,8 +47,14 @@ const CreateUser = () => {
       ></input>
       <input
         ref={profileImageRef}
-        className="postInputs three"
+        className="postInputs five"
         placeholder="image"
+      ></input>
+      <input
+        type="date"
+        ref={dateRef}
+        className="postInputs three"
+        placeholder="birthday"
       ></input>
       <button onClick={create} className="createPostButton">
         create user

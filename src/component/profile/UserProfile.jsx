@@ -42,6 +42,7 @@ const UserProfile = ({ value }) => {
             {value.firstName} {""}
             {value.lastName}
           </div>
+          <div style={{ fontWeight: "700" }}>{value.birthday}</div>
         </div>
       </div>{" "}
       <div className="newStory">
