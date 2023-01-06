@@ -18,7 +18,6 @@ const CreatePost = () => {
         });
         toast("successful");
       } catch (error) {
-        // alert(error.response.data.data);
         toast(error.response.data.data);
       }
     }
