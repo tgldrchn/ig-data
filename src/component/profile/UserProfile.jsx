@@ -96,32 +96,7 @@ const UserProfile = ({ value }) => {
             tagged
           </div>
         </div>
-        <div className="postOfProfile">
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-          <div className="postImageContainer">
-            <img src={value.image} alt="" className="zurag" />
-          </div>
-        </div>
+        <div className="postOfProfile"></div>
       </div>
     </div>
   );
