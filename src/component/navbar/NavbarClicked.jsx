@@ -150,7 +150,7 @@ const Navbar = () => {
           </Link>
         </div>
         <Link
-          to="./63b549ba9c24ece4ce5be2cf"
+          to={userData[0]._id}
           className="navbarButtonClick"
           style={{ border: "1px solid white" }}
         >
@@ -185,9 +185,7 @@ const Navbar = () => {
             {userData &&
               userData.map((el, index) => {
                 return (
-                  el.username.includes(value) && (
-                    <SearchUsers key={index} value={el} />
-                  )
+                  el.username.includes(value) && <SearchUsers value={el} />
                 );
               })}
           </div>
